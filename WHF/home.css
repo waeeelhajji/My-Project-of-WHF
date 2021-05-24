@@ -100,14 +100,14 @@ body {
 }
 
 .card__category{
-  color: var(--text-light);
+  color: bisque;
   font-size: 0.9rem;
   margin-bottom: var(--spacing-s);
   text-transform: uppercase;
 }
 
 .card__heading{
-  color: var(--text-lighter);
+  color: bisque;
   font-size: 1.9rem;
   text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
   line-height: 1.4;
