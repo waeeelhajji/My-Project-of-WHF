@@ -3,11 +3,18 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
  }
- .header {
+ p {
   padding: 60px;
   text-align: center;
-  color: rgb(15, 235, 220);
+  color:  rgb(187, 7, 61);
   font-size: 30px;
+}
+.header{
+  padding: 90px;
+  text-align: center;
+  color: rgb(15, 121, 235);
+  font-size: 40px;
+  font-family: robot;
 }
 .button {
   background-color: #4CAF50; 

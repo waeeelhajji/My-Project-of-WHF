@@ -23,9 +23,9 @@ var food = [{ catg: "Vegetarian Food", img: "../WHPHoto/VGFood/braccoli-ouinaa-c
 ];
 
 function render(food) {
-
+    console.log('food,food', food);
     for (var i = 0; i < food.length; i++) {
-        $('.card-grid').append('<a class="card" href="#"> <div class="card__background" style="background-image: url(' + food[i].img + ')"></div><div class="card__content"> <p class="card__category">' + food[i].catg + '</p> <h3 class="card__heading">' + food[i].name + '' + "   " + food[i].price + "D     " + "Time Needed: " + food[i].time + "Min" + '</h3>')
+        $('.card-grid').append('<a class="card" id=' + i + ' href="#" onclick="ach(' + i + ')" > <div class="card__background" style="background-image: url(' + food[i].img + ')"></div><div class="card__content"> <p class="card__category">' + food[i].catg + '</p> <h3 class="card__heading">' + food[i].name + '' + "   " + food[i].price + "D     " + "Time Needed: " + food[i].time + "Min" + '</h3>')
     };
 }
 render(food)
@@ -39,29 +39,37 @@ $("select#select").change(function () {
         if (food[i].catg === selectedCurrency) {
             arr.push(food[i])
         }
-    } 
+    }
+    $("#h").html('')
     render(arr)
 });
-function reNder(){
+function reNder() {
     res = [];
-for(var i =0;i<food.length;i++){
-    $(".card").click(function () {
-        if(food[i]===this){
-            res.push(food[i])
-        }
-    })
-    
-}
-$(".card").hide()
-$(".card-grid").append(res)
-}
+    for (var i = 0; i < food.length; i++) {
+        $(".card").click(function () {
+            if (food[i] === this) {
+                res.push(food[i])
+            }
+        })
 
-$(".card").click(function(){
+    }
     $(".card").hide()
-    $(this).show() 
-    $('.card-grid').append(food[0].description)
-})
+    $(".card-grid").append(res)
+}
 
+// function h(food) {
+//     $(".card").hide()
+//     // $(this).show()
+//     $('.card-grid').append(food.description)
+// }
 
+function ach(i) {
+    console.log('clicked');
+    var clicked = $(this).attr('id')
+    console.log(i);
+    $(".card").hide()
+    $('.card-grid').append('<a class="card" id=' + i + ' href="#"> <div class="card__background" style="background-image: url(' + food[i].img + ')"></div><div class="card__content"> <p class="card__category">' + food[i].catg + '</p> <h3 class="card__heading">' + food[i].name + '' + "   " + food[i].price + "D     " + "Time Needed: " + food[i].time + "Min" + '</h3>')
+    $('.card-grid').append(food[i].description)
+}
 
 
