@@ -25,12 +25,39 @@ var food = [{ catg: "Vegetarian Food", img: "../WHPHoto/VGFood/braccoli-ouinaa-c
 { catg: "Tunisian Food", img: "../WHPHoto/HMF/tunisian_salad.PNG", name: "Tunisian Salad", description: "This is a basic but effective salad, containing tomato, onion, cucumber, beans, potatoes, olives, tuna and egg. It is normally served with olive oil and lemon on top, and sometimes with Harissa as well", price: 9, time: 4 },
 ];
 
+function render(food) {
 
-for (var i = 0; i < food.length; i++) {
-    $('.card-grid').append('<a class="card" href="#"> <div class="card__background" style="background-image: url(' + food[i].img + ')"></div><div class="card__content"> <p class="card__category">' + food[i].catg + '</p> <h3 class="card__heading">'+food[i].name+ ''+"   "+ food[i].price+"D     "+"Time Needed: " +food[i].time+"Min"+'</h3>')
+    for (var i = 0; i < food.length; i++) {
+        $('.card-grid').append('<a class="card" href="#"> <div class="card__background" style="background-image: url(' + food[i].img + ')"></div><div class="card__content"> <p class="card__category">' + food[i].catg + '</p> <h3 class="card__heading">' + food[i].name + '' + "   " + food[i].price + "D     " + "Time Needed: " + food[i].time + "Min" + '</h3>')
+    };
 }
-function myFunction() {
-    document.getElementById("#select").value = "Chinese Food";
-  }
+render(food)
+
+
+$("select#select").change(function () {
+    document.getElementById("h").innerHTML = ""
+    var arr = []
+    var selectedCurrency = $(this).children("option:selected").val();
+    for (var i = 0; i < food.length; i++) {
+        if (food[i].catg === selectedCurrency) {
+            arr.push(food[i])
+        }
+    }
+
+    food = arr
+    render(arr)
+});
+
+// $( "#select option:Chinese Food" ).val()
+// $( "#select option:Indian Food" ).val()
+// $( "#select option:Vegetarian Food" ).val()
+// $( "#select option:Tunisian Food" ).val()
+// .filter( selector )
+// $( "div" )
+//   .css( "background", "#b4b0da" )
+//   .filter(function( index ) {
+//     return index === 1 || $( this ).attr( "id" ) === "fourth";
+//   })
+//     .css( "border", "3px double red" );
 
 
