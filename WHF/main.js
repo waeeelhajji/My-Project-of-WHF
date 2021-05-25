@@ -1,4 +1,4 @@
-var food = [{ catg: "Vegetarian Food", img: "../WHPHoto/VGFood/braccoli-ouinaa-cakes.PNG", name: "Braccali Ouinaa Cakes", price: 20, description: "These Broccoli Quinoa Cakes can be made in 30 minutes & are a delicious healthy vegetarian meal that your whole family will love!", time: 10 },
+var food = [{ catg: "Vegetarian Food", img: "../WHPHoto/VGFood/braccoli-ouinaa-cakes.PNG", name: "Braccali Ouinaa Cakes", price: 20, description: "These Broccoli Quinoa Cakes Can be made in 30 minutes & are A delicious healthy vegetarian Meal that your whole family will love!", time: 30 },
 { catg: "Vegetarian Food", img: "../WHPHoto/VGFood/butternut_risotto_with-leeks-and-spinach.PNG", name: " Butternut Risotto with Leeks and Spinach ", price: 13, description: "made with very little fuss, in your Instant Pot or on the stovetop! Vegan-adaptable and Gluten-free", time: 12 },
 { catg: "Vegetarian Food", img: "../WHPHoto/VGFood/eggplant-lasagna.PNG", name: " Eggplant Lasagna ", price: 25, description: "made with no-boil noodles and topped with Arugula Pesto. A delicious, healthy vegetarian dinner recipe that is comforting and nourishing", time: 20 },
 { catg: "Vegetarian Food", img: "../WHPHoto/VGFood/nusi-Gareng.PNG", name: " Nasi Goreng ", price: 35, description: "(Indonesian Fried Rice) loaded up with fresh veggies! Add an egg or keep it vegan! An easy tasty vegetarian recipe that can be made in minutes!", time: 10 },
@@ -59,7 +59,7 @@ $(".card-grid").append(res)
 $(".card").click(function(){
     $(".card").hide()
     $(this).show() 
-    $('.card-grid').append(food[0].description+"\n"+food[0].price+"\n"+food[0].time)
+    $('.card-grid').append(food[0].description)
 })
 
 
