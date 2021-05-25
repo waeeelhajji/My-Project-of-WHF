@@ -25,7 +25,7 @@ var food = [{ catg: "Vegetarian Food", img: "../WHPHoto/VGFood/braccoli-ouinaa-c
 function render(food) {
 
     for (var i = 0; i < food.length; i++) {
-        $('.card-grid').append('<a class="card" href="home2.html"> <div class="card__background" style="background-image: url(' + food[i].img + ')"></div><div class="card__content"> <p class="card__category">' + food[i].catg + '</p> <h3 class="card__heading">' + food[i].name + '' + "   " + food[i].price + "D     " + "Time Needed: " + food[i].time + "Min" + '</h3>')
+        $('.card-grid').append('<a class="card" href="#"> <div class="card__background" style="background-image: url(' + food[i].img + ')"></div><div class="card__content"> <p class="card__category">' + food[i].catg + '</p> <h3 class="card__heading">' + food[i].name + '' + "   " + food[i].price + "D     " + "Time Needed: " + food[i].time + "Min" + '</h3>')
     };
 }
 render(food)
@@ -42,7 +42,24 @@ $("select#select").change(function () {
     } 
     render(arr)
 });
+function reNder(){
+    res = [];
+for(var i =0;i<food.length;i++){
+    $(".card").click(function () {
+        if(food[i]===this){
+            res.push(food[i])
+        }
+    })
+    
+}
+$(".card").hide()
+$(".card-grid").append(res)
+}
 
+$(".card").click(function(){
+    $(".card").hide()
+    $(this).show() 
+})
 
 
 
