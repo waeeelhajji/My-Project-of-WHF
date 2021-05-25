@@ -1,5 +1,7 @@
 body {
-    background: url("../WHPHoto/res1.jpg");
+    background: url("../WHPHoto/ress.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
  }
  .header {
   padding: 60px;
