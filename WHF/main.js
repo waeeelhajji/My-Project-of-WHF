@@ -59,6 +59,7 @@ $(".card-grid").append(res)
 $(".card").click(function(){
     $(".card").hide()
     $(this).show() 
+    $('.card-grid').append(food[0].description+"\n"+food[0].price+"\n"+food[0].time)
 })
 
 
